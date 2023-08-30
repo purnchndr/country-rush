@@ -31,3 +31,12 @@ input {
   background-color: white;
   font-family: 50%;
 }
+.all-countries {
+  margin: 4px auto;
+}
+
+@media screen and (max-width: 650px) {
+  .search-heading {
+    display: block;
+  }
+}

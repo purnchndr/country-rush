@@ -1,0 +1,16 @@
+footer {
+  display: block;
+  background-color: blueviolet;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.footer p {
+  color: white;
+  font-size: 13px;
+  padding: 0 10px;
+  text-align: center;
+}

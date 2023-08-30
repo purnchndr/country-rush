@@ -5,6 +5,7 @@ import "./serchbar.css";
 import AllCountries from "./components/allCountries";
 import CountryDetails from "./components/countryDetails";
 import Loder from "./components/loader";
+import Footer from "./components/footer";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -70,6 +71,7 @@ const App = () => {
       ) : (
         <AllCountries countryClick={countryClick} />
       )}
+      <Footer />
     </>
   );
 };

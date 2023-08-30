@@ -50,3 +50,23 @@ li {
   flex-grow: inherit;
   align-content: space-between;
 }
+
+@media screen and (max-width: 470px) {
+  .countries-list {
+    height: 150px;
+    width: 140px;
+    font-size: 15px;
+  }
+
+  .coun-img-container {
+    height: 90px;
+    width: 100%;
+  }
+
+  .countries-container {
+    padding: 0;
+  }
+  .counties-image {
+    max-height: 90px;
+  }
+}
