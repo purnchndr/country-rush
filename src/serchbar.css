@@ -4,6 +4,12 @@
   color: white;
   text-align: center;
   padding: 1% 0;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 20px;
 }
 
 input {
@@ -36,7 +42,14 @@ input {
 }
 
 @media screen and (max-width: 650px) {
-  .search-heading {
+  /* .search-heading {
+    display: block;
+  } */
+  .search-bar {
     display: block;
   }
+}
+
+.logo {
+  width: 65px;
 }

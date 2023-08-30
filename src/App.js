@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./serchbar.css";
+import logo from "../src/logo.png";
 
 import AllCountries from "./components/allCountries";
 import CountryDetails from "./components/countryDetails";
@@ -89,23 +90,25 @@ const SearchBar = ({
 
   return (
     <div className="search-bar">
+      <img src={logo} className="logo" alt="country rush logo" />
       <h1 className="search-heading">Country Rush</h1>
-
-      <input
-        autoComplete="false"
-        className="search-input"
-        type="text"
-        onChange={handelQuery}
-        value={query}
-        placeholder="country name"
-      />
-      <button
-        className="search-button"
-        type="button"
-        onClick={() => setCountryHandeler(query)}
-      >
-        🔎
-      </button>
+      <div>
+        <input
+          autoComplete="false"
+          className="search-input"
+          type="text"
+          onChange={handelQuery}
+          value={query}
+          placeholder="country name"
+        />
+        <button
+          className="search-button"
+          type="button"
+          onClick={() => setCountryHandeler(query)}
+        >
+          🔎
+        </button>
+      </div>
       {!AllCountriesState && (
         <button
           className="all-countries"

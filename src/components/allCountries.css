@@ -70,3 +70,16 @@ li {
     max-height: 90px;
   }
 }
+
+.filter {
+  text-align: center;
+}
+
+.filter input {
+  height: 20px;
+  background-color: rgb(226, 195, 255);
+  padding: 4px 20px;
+  margin: 5px;
+  color: white;
+  width: 260px;
+}
