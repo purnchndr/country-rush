@@ -1,0 +1,33 @@
+.search-bar {
+  background-color: blueviolet;
+  border-radius: 1rem;
+  color: white;
+  text-align: center;
+  padding: 1% 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.5rem;
+  height: 2rem;
+  font-size: large;
+}
+
+.search-button {
+  border: none;
+  background: none;
+  font-size: larger;
+}
+
+.search-heading {
+  display: inline-block;
+  font-size: 200%;
+  margin: auto 5%;
+}
+
+.all-countries {
+  border-radius: 0.5rem;
+  color: blueviolet;
+  background-color: white;
+  font-family: 50%;
+}

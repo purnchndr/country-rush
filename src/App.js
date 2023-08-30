@@ -1,25 +1,119 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
-function App() {
+import "./serchbar.css";
+
+import AllCountries from "./components/allCountries";
+import CountryDetails from "./components/countryDetails";
+import Loder from "./components/loader";
+
+const App = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [showAll, setShowAll] = useState(true);
+  const [country, setCountry] = useState("India");
+  const [loding, setLoding] = useState(false);
+
+  function setCountryHandeler(data) {
+    console.log(data);
+    setShowAll(false);
+    setError(null);
+    setCountry(data);
+  }
+
+  function handelAllCountries(flag) {
+    console.log(flag);
+    setShowAll(flag);
+  }
+
+  async function countryClick(countrie) {
+    setCountry(countrie);
+    setShowAll(false);
+  }
+  useEffect(() => {
+    async function handelSearch() {
+      try {
+        setLoding(true);
+        const res = await fetch(
+          `https://restcountries.com/v3.1/name/${country}?fullText=true`
+        );
+        const result = await res.json();
+        result.status = "success";
+        console.log(result);
+
+        if (result.message === "Not Found")
+          setError(
+            "Sorry, Country not found, Please check any spelling mistake."
+          );
+        setData(result[0]);
+      } catch (e) {
+        setError("Something went wrong, Please try again!");
+      } finally {
+        setLoding(false);
+      }
+    }
+    handelSearch();
+  }, [country]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <SearchBar
+        setCountryHandeler={setCountryHandeler}
+        handelAllCountries={handelAllCountries}
+        AllCountriesState={showAll}
+      />
+      {loding ? (
+        <Loder />
+      ) : error ? (
+        <p className="center-message">{error}</p>
+      ) : !showAll ? (
+        <CountryDetails data={data} />
+      ) : (
+        <AllCountries countryClick={countryClick} />
+      )}
+    </>
+  );
+};
+
+const SearchBar = ({
+  setCountryHandeler,
+  handelAllCountries,
+  AllCountriesState,
+}) => {
+  const [query, setQuery] = useState("India");
+
+  function handelQuery(e) {
+    setQuery(e.target.value);
+  }
+
+  return (
+    <div className="search-bar">
+      <h1 className="search-heading">Country Rush</h1>
+
+      <input
+        autoComplete="false"
+        className="search-input"
+        type="text"
+        onChange={handelQuery}
+        value={query}
+        placeholder="country name"
+      />
+      <button
+        className="search-button"
+        type="button"
+        onClick={() => setCountryHandeler(query)}
+      >
+        🔎
+      </button>
+      {!AllCountriesState && (
+        <button
+          className="all-countries"
+          onClick={() => handelAllCountries(true)}
         >
-          Learn React
-        </a>
-      </header>
+          All Countries
+        </button>
+      )}
     </div>
   );
-}
+};
 
 export default App;

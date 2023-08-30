@@ -1,0 +1,82 @@
+:root {
+  --bg-img: url("https://mainfacts.com/media/images/coats_of_arms/in.png");
+}
+
+.data-image {
+  width: 80%;
+  margin: 0 auto;
+  margin: 5%;
+  /* padding: 5%; */
+  box-shadow: 0 0 10px black;
+  border-radius: 1rem;
+}
+
+.image-div {
+  display: inline-block;
+  width: 50%;
+  background-position: center;
+  text-align: center;
+}
+
+.info-div {
+  display: inline-block;
+  width: 40%;
+  margin: 2.5%;
+  padding: 2.5%;
+  background-position: center;
+  text-align: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(254, 244, 255, 0.8),
+      rgba(254, 244, 255, 0.8)
+    ),
+    var(--bg-img);
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  background-color: rgb(254, 244, 255);
+  margin: 10px 5px;
+  border-radius: 2rem;
+  border: 2px solid rgb(234, 188, 255);
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: larger;
+  font-weight: bold;
+}
+
+.country-name {
+  color: rgb(72, 0, 139);
+  font-size: 300%;
+  font-weight: bold;
+  margin: 1px;
+}
+
+@media screen and (max-width: 500px) {
+  .info-div {
+    display: block;
+    width: 90%;
+  }
+  .image-div {
+    display: block;
+    width: 90%;
+  }
+  .data {
+    display: block;
+  }
+}
+
+.center-message {
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 20vh;
+}
+
+button {
+  cursor: pointer;
+  font-size: 130%;
+}
