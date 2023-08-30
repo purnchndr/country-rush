@@ -6,7 +6,11 @@ function Footer() {
       <div className="footer">
         <p>
           This site is created by{" "}
-          <a href="https://purnchndr.netlify.app/" target="_blank">
+          <a
+            href="https://purnchndr.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Purnachandra
           </a>
           👨‍💻
