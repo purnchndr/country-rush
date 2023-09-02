@@ -40,8 +40,6 @@ const App = () => {
         );
         const result = await res.json();
         result.status = "success";
-        console.log(result);
-
         if (result.message === "Not Found")
           setError(
             "Sorry, Country not found, Please check any spelling mistake."

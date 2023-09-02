@@ -9,3 +9,8 @@ body {
 #root {
   position: relative;
 }
+
+input::placeholder {
+        color: #ffffff;
+        opacity: 1;
+      }

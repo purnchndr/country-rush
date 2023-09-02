@@ -30,7 +30,7 @@ function AllCountries({ countryClick }) {
             return { name: c.name.common, flag: c.flags.svg };
           })
           .sort((a, b) => (a.name > b.name ? 1 : -1));
-        console.log("sorted array", items);
+        // console.log("sorted array", items);
         setLocalData(items);
         setCounties(items);
       } catch (e) {
@@ -48,7 +48,7 @@ function AllCountries({ countryClick }) {
         return cntr.name.toLowerCase().includes(filter);
       });
     });
-  }, [filter]);
+  }, [filter, localData]);
 
   if (error)
     return <p className="center">Failed to load Data from server :(</p>;
@@ -57,7 +57,6 @@ function AllCountries({ countryClick }) {
     <>
       <div className="filter">
         <input
-          
           type="text"
           value={filter}
           onChange={(e) => handelFilter(e)}
